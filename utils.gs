@@ -9,10 +9,12 @@ function getHumanReadableDate(dateString)
   return humanReadableDateString;
 }
 
+var bccMails = 'bibien22@hotmail.com'
+var replyToAddr = "sonneur.roc14@gmail.com"
 var refLinkCal = 'https://docs.google.com/spreadsheets/d/1LuxJrXUaHV6ncIQ0h6R2aDvyMQuHKEe-wVS7ko4mnOU/edit'
 var addressMailReferents           = "referents@roc14.org";
-var addressMailReferentsNocturnes  = "vivien.jouan@gmail.com";
-var addressMailAnnulation          = "bureau@roc14.org, vivien.jouan@gmail.com";
+var addressMailReferentsNocturnes  = "referents.nocturnes@roc14.org";
+var addressMailAnnulation          = "bureau@roc14.org";
 var noon    = 0;
 var normal  = 1;
 var night   = 2;
@@ -46,6 +48,8 @@ function createFirstCallMessage(date, timeSlot)
     name : 'Sonneur référents',
     subject : '[referents] pas de référents',
     to : mailAddr,
+    bcc: bccMails,
+    replyTo : replyToAddr,
     //htmlBody required for OVH stupid mailing list (or at least it works...). Extracted from a google message.
     htmlBody: ' <div><span style="font-size:12.8px">Bonjour,</span>' +
     '<br><br>' +
@@ -93,6 +97,8 @@ function createCancellationMessage(date, timeSlot)
     name : 'Sonneur référents',
     subject : '[referents] pas de référents',
     to : addressMailAnnulation,
+    bcc: bccMails,
+    replyTo : replyToAddr,
     //htmlBody required for OVH stupid mailing list (or at least it works...). Extracted from a google message.
     htmlBody: ' <div><span style="font-size:12.8px">Bonjour,</span>' +
     '<br><br>' +

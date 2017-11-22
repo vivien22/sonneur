@@ -10,7 +10,7 @@ function locateEmptyDay()
   for(var sheetIdx = 0; sheetIdx < sheetsTab.length; sheetIdx++)
   {
     var sheetName = sheetsTab[sheetIdx].getName();          // Just for debug
-    var range     = sheetsTab[sheetIdx].getRange('b2:f40'); // Range includes day and referent columns, from row 1 to 40 (40, just to be sure because of blank lines between weeks)
+    var range     = sheetsTab[sheetIdx].getRange('b2:f70'); // Range includes day and referent columns, from row 1 to 40 (40, just to be sure because of blank lines between weeks)
     dayCol        = 1;
     normalRefCol  = 2;
     nightRefCol   = 3;
